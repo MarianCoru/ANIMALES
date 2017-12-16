@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Animales.Models.ANIMAL>
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Listado</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+    <th>DIO</th>
+    <th>Nombre</th>
+    <th>Sexo</th>
+    <th>Raza</th>
+    <th>Edad</th>
+    <th>Tipo</th>
+    <th>Rebaño</th>
+
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+
+            <tr>
+                <td>@Html.DisplayFor(m => a.DIO)</td>
+                <td>@Html.DisplayFor(m => a.Nombre)</td>
+                <td>@Html.DisplayFor(m => a.Sexo)</td>
+                <td>@Html.DisplayFor(m => a.Raza)</td>
+                <td>@Html.DisplayFor(m => a.Edad)</td>
+                <td>@Html.DisplayFor(m => a.Tipo)</td>
+                <td>@Html.DisplayFor(m => a.Rebaño)</td>
+                <td>@Html.ActionLink("Visualizar", "Ver", new { dio = a.DIO})</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
